@@ -1,0 +1,7 @@
+<div *ngIf="messageService.messages.length">
+
+  <h2>Doomsday says:</h2>
+  <button type="button" class="clear" (click)="messageService.clear()">Wipe them all!</button>
+  <div *ngFor='let message of messageService.messages'> {{message}} </div>
+
+</div>
