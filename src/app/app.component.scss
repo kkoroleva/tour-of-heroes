@@ -1,6 +1,10 @@
 /* AppComponent's private CSS styles */
 h1 {
   margin-bottom: 0;
+  text-align: center;
+  padding: 100px 0 20px 0;
+  color: #673ab7;
+  font-size: 400%;
 }
 nav a {
   padding: 1rem;
@@ -18,4 +22,9 @@ nav a:hover {
 }
 nav a.active {
   background-color: black;
+}
+
+.body-wrapper {
+  width: 500px;
+  margin: 0 auto;
 }

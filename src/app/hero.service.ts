@@ -25,7 +25,7 @@ export class HeroService {
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
-        tap(_ => this.log('fetched heroes')),
+        tap(_ => this.log('Heroes positions fetched')),
         catchError(this.handleError<Hero[]>('getHeroes', []))
       );
   }
@@ -37,8 +37,8 @@ export class HeroService {
       .pipe(
         map(heroes => heroes[0]), // returns a {0|1} element array
         tap(h => {
-          const outcome = h ? 'fetched' : 'did not find';
-          this.log(`${outcome} hero id=${id}`);
+          const outcome = h ? 'Profile of the hero was opened' : 'did not find';
+          this.log(`${outcome}. Hero id=${id}`);
         }),
         catchError(this.handleError<Hero>(`getHero id=${id}`))
       );
@@ -48,7 +48,7 @@ export class HeroService {
   getHero(id: number): Observable<Hero> {
     const url = `${this.heroesUrl}/${id}`;
     return this.http.get<Hero>(url).pipe(
-      tap(_ => this.log(`fetched hero id=${id}`)),
+      tap(_ => this.log(`Profile of the hero was opened. id=${id}`)),
       catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
   }
