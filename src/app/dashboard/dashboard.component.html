@@ -1,9 +1,10 @@
-<h2>Heroes A-List</h2>
-<div class="heroes-menu">
-  <a *ngFor="let hero of heroes"
-      routerLink="/profile/{{hero.id}}">
+<section class="dashboard">
+  <h2>Heroes A-List</h2>
+  <div class="heroes-menu">
+    <a *ngFor="let hero of heroes" routerLink="/profile/{{hero.id}}">
       {{hero.name}}
-  </a>
-</div>
+    </a>
+  </div>
 
-<app-hero-search></app-hero-search>
+  <app-hero-search></app-hero-search>
+</section>
