@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile/:id', component: HeroDetailComponent },
   { path: 'registration', component: RegistrationFormComponent },
-  { path: 'book', component: BookComponent},
+  { path: 'book', redirectTo: 'book/page/1', pathMatch: 'full'},
 ];
 
 @NgModule({

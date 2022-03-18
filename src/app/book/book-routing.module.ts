@@ -9,7 +9,7 @@ import { Page5Component } from './page5/page5.component';
 
 
 export const routesChildren: Routes = [
-  { path: '', redirectTo: '/book', pathMatch: 'full'},
+  { path: '', redirectTo: 'page/1', pathMatch: 'full'},
   {
     path: '', component: BookComponent,
     children: [
@@ -18,7 +18,7 @@ export const routesChildren: Routes = [
       { path: 'page/3', component: Page3Component },
       { path: 'page/4', component: Page4Component },
       { path: 'page/5', component: Page5Component },
-      { path: '**', component: BookComponent },
+      { path: '**', component: Page1Component },
     ],
   },
 ];

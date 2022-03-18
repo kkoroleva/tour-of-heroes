@@ -27,8 +27,14 @@
   line-height: 22px;
 }
 
-.book__navigation-link:hover {
-  background-color: #8F07CF;
-  color: white;
+.book__navigation-link {
+  &:hover, &:focus {
+    background-color: #8F07CF;
+    color: white;
+  }
+}
 
+.book__navigation-link:is(:hover, :focus) {
+    background-color: #8F07CF;
+    color: white;
 }
