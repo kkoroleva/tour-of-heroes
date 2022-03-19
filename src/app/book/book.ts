@@ -3,5 +3,5 @@ export interface Book {
   title: string;
   description?: string;
   releaseDate?: string;
-  releasedBooks?: number;
+  releasedBooks: number;
 }
