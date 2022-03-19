@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MatTableModule} from '@angular/material/table';
 import { Book } from "../book";
 import { BooksData } from '../book-mock';
 
@@ -10,14 +9,21 @@ import { BooksData } from '../book-mock';
 })
 export class BookTableComponent implements OnInit {
 
-  booksData: Book[] | undefined;
-  booksDataLength: number | undefined;
+  booksData: Book[] = [];
+  bookColumns: string[] = [];
+  booksDataLength: number = 0;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
     this.booksData = BooksData;
-    this.booksDataLength = BooksData.length;
-  }
+    this.bookColumns = ['id', 'title', 'sold'];
+    this.booksDataLength = this.booksData.length;
 
+  }
+  getSoldNumber() {
+    return this.booksData.map(book => book.releasedBooks).reduce((acc, value) => acc + value, 0);
+  }
 }
