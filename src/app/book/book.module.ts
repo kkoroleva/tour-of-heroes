@@ -9,6 +9,9 @@ import { Page4Component } from './page4/page4.component';
 import { Page5Component } from './page5/page5.component';
 
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatButtonModule} from '@angular/material/button';
+import { BookTableComponent } from './book-table/book-table.component';
+import { BookPaginationComponent } from './book-pagination/book-pagination.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     Page2Component,
     Page3Component,
     Page4Component,
-    Page5Component
+    Page5Component,
+    BookTableComponent,
+    BookPaginationComponent,
   ],
   imports: [
     CommonModule,
     BookRoutingModule,
     MatPaginatorModule,
+    MatButtonModule,
   ],
   exports: [
     BookComponent,
