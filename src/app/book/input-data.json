@@ -1,6 +1,6 @@
-{"set1": 
-    {
-    "data": [    {
+{
+  "set1": {
+    "data": [{
         "title": "Harry Potter and the Order of the Phoenix",
         "id": 1,
         "description": "There is a door at the end of a silent corridor. And it’s haunting Harry Pottter’s dreams. Why else would he be waking in the middle of the night, screaming in terror? Harry has a lot on his mind for this, his fifth year at Hogwarts: a Defense Against the Dark Arts teacher with a personality like poisoned honey; a big surprise on the Gryffindor Quidditch team; and the looming terror of the Ordinary Wizarding Level exams. But all these things pale next to the growing threat of He-Who-Must-Not-Be-Named - a threat that neither the magical government nor the authorities at Hogwarts can stop. As the grasp of darkness tightens, Harry must discover the true depth and strength of his friends, the importance of boundless loyalty, and the shocking price of unbearable sacrifice. His fate depends on them all."
@@ -31,8 +31,32 @@
         "description": "In Beatrice Prior's dystopian Chicago world, society is divided into five factions, each dedicated to the cultivation of a particular virtue—Candor (the honest), Abnegation (the selfless), Dauntless (the brave), Amity (the peaceful), and Erudite (the intelligent). On an appointed day of every year, all sixteen-year-olds must select the faction to which they will devote the rest of their lives. For Beatrice, the decision is between staying with her family and being who she really is—she can't have both. So she makes a choice that surprises everyone, including herself. During the highly competitive initiation that follows, Beatrice renames herself Tris and struggles alongside her fellow initiates to live out the choice they have made. Together they must undergo extreme physical tests of endurance and intense psychological simulations, some with devastating consequences. As initiation transforms them all, Tris must determine who her friends really are—and where, exactly, a romance with a sometimes fascinating, sometimes exasperating boy fits into the life she's chosen. But Tris also has a secret, one she's kept hidden from everyone because she's been warned it can mean death. And as she discovers unrest and growing conflict that threaten to unravel her seemingly perfect society, she also learns that her secret might help her save those she loves . . . or it might destroy her."
       }
     ]
-    },
-    "set2": {
-      "data": [{"id": 1, "releaseDate": "2011-01-02", "qtyRelease": 500},{"id": 2, "releaseDate": "2011-01-03", "qtyRelease": 7500},{"id": 3, "releaseDate": "2011-06-03", "qtyRelease": 9700},{"id": 4, "releaseDate": "2011-07-22", "qtyRelease": 380},{"id": 5, "releaseDate": "2011-06-22", "qtyRelease": 90000},{"id": 6, "releaseDate": "2011-03-22", "qtyRelease": 3805}]
-    }
+  },
+  "set2": {
+    "data": [{
+      "id": 1,
+      "releaseDate": "2011-01-02",
+      "qtyRelease": 500
+    }, {
+      "id": 2,
+      "releaseDate": "2011-01-03",
+      "qtyRelease": 7500
+    }, {
+      "id": 3,
+      "releaseDate": "2011-06-03",
+      "qtyRelease": 9700
+    }, {
+      "id": 4,
+      "releaseDate": "2011-07-22",
+      "qtyRelease": 380
+    }, {
+      "id": 5,
+      "releaseDate": "2011-06-22",
+      "qtyRelease": 90000
+    }, {
+      "id": 6,
+      "releaseDate": "2011-03-22",
+      "qtyRelease": 3805
+    }]
   }
+}

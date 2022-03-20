@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 /*Routing&Services*/
 import { BookRoutingModule } from './book-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from '../in-memory-data.service';
 
 /*Components */
 import { BookComponent } from './book/book.component';
@@ -15,10 +18,10 @@ import { BookTableComponent } from './book-table/book-table.component';
 import { BookPaginationComponent } from './book-pagination/book-pagination.component';
 
 /*Material UI*/
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -34,6 +37,11 @@ import {MatTableModule} from '@angular/material/table';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
     BookRoutingModule,
     MatPaginatorModule,
     MatButtonModule,
