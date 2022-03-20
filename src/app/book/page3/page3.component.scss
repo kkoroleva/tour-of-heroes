@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+.book-page {
+  font-family: 'Open Sans', sans-serif;
+  width: 850px;
+  margin: 0 auto;
+  padding: 24px 40px 0;
+  box-sizing: border-box;
+}
+
+.page__image {
+  display: block;
+  width: 370px;
+  margin: 0 auto;
+}
+
+.page__main-header {
+  margin: 0;
+  padding: 24px 0 16px 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: black;
+}
+
+.page__header {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: black;
+}
+
+.page__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: black;
+}

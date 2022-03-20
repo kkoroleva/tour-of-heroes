@@ -18,6 +18,7 @@ import { MessagesComponent } from './messages/messages.component';
 
 //Modules
 import { RegistrationModule } from './registration/registration.module';
+import { BookModule } from './book/book.module'
 
 /*Material UI modules */
 import {MatButtonModule} from '@angular/material/button';
@@ -36,6 +37,7 @@ import { FenceCasePipe } from './fence-case.pipe';
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
+    BookModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
