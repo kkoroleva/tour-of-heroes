@@ -25,6 +25,7 @@ import { MatTableModule } from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 
+
 @NgModule({
   declarations: [
     BookComponent,
@@ -49,6 +50,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCardModule,
     MatTableModule,
     MatExpansionModule,
+
   ],
   exports: [
     BookComponent,

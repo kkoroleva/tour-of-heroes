@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { Set1, Set2 } from "./book";
 
 
-
 @Injectable({
   providedIn: 'root' //как ограничить сервис только модулем?
 })
