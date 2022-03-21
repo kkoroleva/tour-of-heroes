@@ -1,0 +1,27 @@
+<section class="registration-form">
+  <div class="registration-form__container">
+    <div class="regstration-form__header-wrapper">
+      <h2 class="registration-form__header">Create a free account</h2>
+      <p class="registration-form__preword">Create a free salmanwap account to access
+        all articles and videos.</p>
+    </div>
+    <form class="registration-form__form">
+      <div class="registration-form__fields-wrapper">
+        <mat-form-field appearance="fill">
+          <mat-label>Username: </mat-label>
+          <input matInput placeholder="shambhavim1999" id="user-name" #userName>
+          <mat-hint>Must not contain any special character</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" >
+          <mat-label>Password:</mat-label>
+          <input type="password" matInput placeholder="********" id="user-password" #userPassword minlength="8">
+          <mat-hint>Must have atleast 8+ characters</mat-hint>
+
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" type="button" class="add-button">
+        Create a free account</button>
+    </form>
+  </div>
+</section>

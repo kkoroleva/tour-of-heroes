@@ -3,23 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-<<<<<<< HEAD
-=======
 import { RegistrationFormComponent } from './registration/registration-form/registration-form.component';
 
 
->>>>>>> f771f87 (add table and fix routings to it)
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'heroes', component: HeroesComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile/:id', component: HeroDetailComponent },
-<<<<<<< HEAD
-=======
   { path: 'registration', component: RegistrationFormComponent },
   { path: 'book', loadChildren: () => import('./book/book-routing.module').then(m => m.BookRoutingModule)},
->>>>>>> f771f87 (add table and fix routings to it)
+
 ];
 
 @NgModule({

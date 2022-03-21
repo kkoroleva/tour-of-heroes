@@ -1,24 +1,28 @@
-<h2>My Heroes</h2>
+<section class="heroes">
 
-<div>
+  <h2>My Heroes</h2>
 
-  <mat-form-field class="hero-add-form" appearance="fill">
-    <mat-label>Hero alias: </mat-label>
-    <input matInput placeholder="Tell us his name" id="new-hero" #heroName>
-  </mat-form-field>
+  <div>
 
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button mat-raised-button color="primary" type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
-    Add Hero
-  </button>
-</div>
+    <mat-form-field class="hero-add-form" appearance="fill">
+      <mat-label>Hero alias: </mat-label>
+      <input matInput placeholder="Tell us his name" id="new-hero" #heroName>
+    </mat-form-field>
 
-<mat-list class="heroes">
-  <mat-list-item *ngFor="let hero of heroes">
-    <a mat-stroked-button routerLink="/profile/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button mat-raised-button color="primary" type="button" class="delete" title="delete hero"
-      (click)="delete(hero)">x</button>
-  </mat-list-item>
-</mat-list>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button mat-raised-button color="primary" type="button" class="add-button"
+      (click)="add(heroName.value); heroName.value=''">
+      Add Hero
+    </button>
+  </div>
+
+  <mat-list class="heroes">
+    <mat-list-item *ngFor="let hero of heroes">
+      <a mat-stroked-button routerLink="/profile/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name | uppercase}}
+      </a>
+      <button mat-raised-button color="primary" type="button" class="delete" title="delete hero"
+        (click)="delete(hero)">x</button>
+    </mat-list-item>
+  </mat-list>
+</section>

@@ -16,6 +16,9 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
 
+//Modules
+import { RegistrationModule } from './registration/registration.module';
+import { BookModule } from './book/book.module'
 
 /*Material UI modules */
 import {MatButtonModule} from '@angular/material/button';
@@ -25,13 +28,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
+import { FenceCasePipe } from './fence-case.pipe';
 
 @NgModule({
   imports: [
+    RegistrationModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
+    BookModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
@@ -46,6 +52,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatListModule,
     MatMenuModule,
     MatTabsModule,
+
+    //Modules
   ],
   declarations: [
     AppComponent,
@@ -53,7 +61,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    FenceCasePipe,
   ],
   bootstrap: [ AppComponent ]
 })

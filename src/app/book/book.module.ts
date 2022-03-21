@@ -9,6 +9,7 @@ import { InMemoryDataService } from '../in-memory-data.service';
 
 /*Components */
 import { BookComponent } from './book/book.component';
+
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { Page3Component } from './page3/page3.component';
@@ -31,6 +32,7 @@ import { MatTableModule } from '@angular/material/table';
     Page2Component,
     Page3Component,
     Page4Component,
+
     Page5Component,
     BookTableComponent,
     BookPaginationComponent,
