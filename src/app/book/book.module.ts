@@ -22,6 +22,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     MatCardModule,
     MatTableModule,
+    MatExpansionModule,
   ],
   exports: [
     BookComponent,

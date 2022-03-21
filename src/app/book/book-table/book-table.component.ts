@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from "../book";
+import { Book, Set1, Set2 } from "../book";
 import { BooksService } from '../books.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
-import { forkJoin, Observable, of, Subscription } from 'rxjs';
-import { merge, map } from 'rxjs';
+import { forkJoin, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-book-table',
@@ -24,8 +23,8 @@ export class BookTableComponent implements OnInit {
   bookColumns: string[] = [];
   expandedElement: Book | null = null;
 
-  set1: [] = [];
-  set2: [] = [];
+  set1: Set1[] = [];
+  set2: Set2[] = [];
 
   constructor(private booksService: BooksService) {
 
