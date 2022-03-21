@@ -64,7 +64,7 @@ export class BookTableComponent implements OnInit {
   }
 
   getColumnNameStraight(str: string): string {
-    return str === 'id' ? 'ID' : str === 'title' ? 'Название' : str === 'qtyRelease' ? 'Продано (шт.)' : '';
+    return str === 'id' ? 'ID' : str === 'title' ? 'Название' : str === 'qtyRelease' ? 'Продано (шт.)' : str;
   }
 
   getSoldNumber(): number {
