@@ -53,7 +53,7 @@ export class BookTableComponent implements OnInit {
           }
         });
       });
-      this.bookColumns = ['id', 'title', 'qtyRelease'];
+      this.bookColumns = ['id', 'title', 'qtyRelease', 'meow','releaseDate'];
     });
   }
 
