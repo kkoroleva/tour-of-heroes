@@ -45,6 +45,7 @@ export class BookTableComponent implements OnInit {
       this.set1 = value[0];
       this.set2 = value[1];
 
+
       this.set1.forEach(el => {
         this.set2.forEach(mel => {
           if (el['id'] === mel['id']) {
