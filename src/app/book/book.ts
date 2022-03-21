@@ -11,10 +11,6 @@ export interface Set2 {
   qtyRelease: number;
 }
 
-export interface Book {
-  id: number;
-  title: string;
-  description?: string;
-  releaseDate?: string;
-  qtyRelease: number;
+export interface Book extends Set1, Set2 {
+  
 }
