@@ -5,7 +5,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 
 import { forkJoin, Subscription } from 'rxjs';
 
-@Component({
+@Component ({
   selector: 'app-book-table',
   templateUrl: './book-table.component.html',
   styleUrls: ['./book-table.component.scss'],
@@ -41,10 +41,9 @@ export class BookTableComponent implements OnInit {
     });
   }
   getBooksData() {
-    return forkJoin(this.booksService.getSet2(), this.booksService.getSet1()).subscribe(value => {
+    return forkJoin<[Set1[], Set2[]]>([this.booksService.getSet2(), this.booksService.getSet1()]).subscribe(value => {
       this.set1 = value[0];
       this.set2 = value[1];
-
 
       this.set1.forEach(el => {
         this.set2.forEach(mel => {
@@ -61,6 +60,10 @@ export class BookTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBooksData();
+  }
+
+  ngOnDestroy(): void {
+
   }
 
   getColumnNameStraight(str: string): string {

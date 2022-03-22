@@ -30,6 +30,14 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FenceCasePipe } from './fence-case.pipe';
 
+import { CongratsComponent } from './congrats/congrats.component';
+
+/*Directives */
+import { HelloDirective } from './directives/hello.directive';
+import { TextModificatorDirective } from './directives/text-modificator.directive';
+import { TextModificatorHostDirective } from './directives/text-modificator-host.directive';
+import { RainbowDirective } from './directives/rainbow.directive';
+
 @NgModule({
   imports: [
     RegistrationModule,
@@ -63,6 +71,11 @@ import { FenceCasePipe } from './fence-case.pipe';
     MessagesComponent,
     HeroSearchComponent,
     FenceCasePipe,
+    HelloDirective,
+    CongratsComponent,
+    TextModificatorDirective,
+    TextModificatorHostDirective,
+    RainbowDirective,
   ],
   bootstrap: [ AppComponent ]
 })
