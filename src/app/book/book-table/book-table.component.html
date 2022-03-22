@@ -1,24 +1,23 @@
 <section class="book-table">
   <h3 class="book-table__header">Here are lots of books. Choose wisely</h3>
 
-  <!--Ненавижу таблицы-->
-  <table mat-table [dataSource]="booksData" multiTemplateDataRows class="mat-elevation-z8">
+  <table mat-table [dataSource]="booksData" multiTemplateDataRows class="mat-elevation-z10">
     <ng-container matColumnDef="{{column}}" *ngFor="let column of bookColumns">
       <th mat-header-cell *matHeaderCellDef> {{getColumnNameStraight(column)}} </th>
       <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
       <td mat-footer-cell *matFooterCellDef>
-        {{column === 'id'? 'Итого': (column === 'title')? '': getSoldNumber()+' шт.'}} </td>
+        {{column === 'id'? 'Итого': (column === 'qtyRelease')? getSoldNumber()+' шт.': '' }} </td>
     </ng-container>
 
     <ng-container matColumnDef="expandedDetail">
       <td class="example-element" mat-cell *matCellDef="let element" [attr.colspan]="bookColumns.length">
-        <mat-card class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-          <mat-card-subtitle class="example-element-description">Дата релиза: {{element.releaseDate}}
-          </mat-card-subtitle>
-          <mat-card-content class="example-element-description">
-            {{element.description}}
-          </mat-card-content>
-        </mat-card>
+          <mat-card class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+            <mat-card-subtitle class="example-element-description">Дата релиза: {{element.releaseDate}}
+            </mat-card-subtitle>
+            <mat-card-content class="example-element-description">
+              {{element.description}}
+            </mat-card-content>
+          </mat-card>
       </td>
     </ng-container>
 
@@ -27,9 +26,9 @@
       [class.example-expanded-row]="expandedElement === element"
       (click)="expandedElement = expandedElement === element ? null : element">
     </tr>
-    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
     <tr mat-footer-row *matFooterRowDef="bookColumns"></tr>
-  </table>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
 
+  </table>
 
 </section>

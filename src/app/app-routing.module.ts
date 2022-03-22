@@ -7,7 +7,6 @@ import { RegistrationFormComponent } from './registration/registration-form/regi
 
 
 
-
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'heroes', component: HeroesComponent },
@@ -15,7 +14,6 @@ const routes: Routes = [
   { path: 'profile/:id', component: HeroDetailComponent },
   { path: 'registration', component: RegistrationFormComponent },
   { path: 'book', loadChildren: () => import('./book/book-routing.module').then(m => m.BookRoutingModule)},
-
 ];
 
 @NgModule({

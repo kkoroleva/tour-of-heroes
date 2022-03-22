@@ -9,7 +9,6 @@ import { InMemoryDataService } from '../in-memory-data.service';
 
 /*Components */
 import { BookComponent } from './book/book.component';
-
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { Page3Component } from './page3/page3.component';
@@ -23,6 +22,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 @NgModule({
@@ -32,7 +33,6 @@ import { MatTableModule } from '@angular/material/table';
     Page2Component,
     Page3Component,
     Page4Component,
-
     Page5Component,
     BookTableComponent,
     BookPaginationComponent,
@@ -49,6 +49,8 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     MatCardModule,
     MatTableModule,
+    MatExpansionModule,
+
   ],
   exports: [
     BookComponent,

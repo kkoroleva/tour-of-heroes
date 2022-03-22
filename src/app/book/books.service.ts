@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, Subscription } from 'rxjs';
-import { merge, map } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Set1, Set2 } from "./book";
 
 
 @Injectable({
@@ -15,9 +15,9 @@ export class BooksService {
   }
 
   getSet1() {
-    return this.http.get<any>(this.booksUrl).pipe(map((data: any) => { return data.set1.data }));
+    return this.http.get<Array<Set1>>(this.booksUrl).pipe(map((data: any) => { return data.set1.data }));
   }
   getSet2() {
-    return this.http.get<any>(this.booksUrl).pipe(map((data: any) => { return data.set2.data }));
+    return this.http.get<Array<Set2>>(this.booksUrl).pipe(map((data: any) => { return data.set2.data }));
   }
 }
