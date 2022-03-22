@@ -62,10 +62,6 @@ h1 {
      }
    }
  }
-
- /*
-  * Element animation delay loop
-  */
  $totalDelayTime: $animationElementsCount * $delayBetweenLetters;
 
  @for $i from 1 through $animationElementsCount {
