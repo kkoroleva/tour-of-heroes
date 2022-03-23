@@ -9,12 +9,15 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
+/*Components */
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
+import { CongratsComponent } from './congrats/congrats.component';
+import { FormComponent } from './form/form.component';
 
 //Modules
 import { RegistrationModule } from './registration/registration.module';
@@ -30,13 +33,13 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FenceCasePipe } from './fence-case.pipe';
 
-import { CongratsComponent } from './congrats/congrats.component';
 
 /*Directives */
 import { HelloDirective } from './directives/hello.directive';
 import { TextModificatorDirective } from './directives/text-modificator.directive';
 import { TextModificatorHostDirective } from './directives/text-modificator-host.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
+
 
 @NgModule({
   imports: [
@@ -76,6 +79,7 @@ import { RainbowDirective } from './directives/rainbow.directive';
     TextModificatorDirective,
     TextModificatorHostDirective,
     RainbowDirective,
+    FormComponent,
   ],
   bootstrap: [ AppComponent ]
 })
