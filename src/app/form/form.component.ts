@@ -18,7 +18,7 @@ export class FormComponent implements OnInit {
     lastName: '',
   };
 
-  readonly basicSuperpowers = ['жизнерадостность', 'интеллект', 'заинтересованность'] as const;
+  basicSuperpowers: string[] = ['жизнерадостность', 'интеллект', 'заинтересованность'];
   superpowers: string[] = ['жизнерадостность', 'интеллект', 'заинтересованность'];
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   addOnBlur = true;
@@ -69,8 +69,10 @@ export class FormComponent implements OnInit {
   clearForm(): void {
     this.formGroup.reset();
     this.powers.clear();
+    this.superpowers = [];
+    this.superpowers = this.basicSuperpowers;
 
-    this.basicSuperpowers.forEach(el => {
+    this.superpowers.forEach(el => {
       this.powers.push(this.builder.control(el));
     });
   }
