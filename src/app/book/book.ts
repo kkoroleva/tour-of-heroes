@@ -12,5 +12,5 @@ export interface Set2 {
 }
 
 export interface Book extends Set1, Set2 {
-  
+
 }
