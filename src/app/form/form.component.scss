@@ -1,0 +1,55 @@
+.form-section {
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.form__header {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: purple;
+}
+
+.form-section__form {
+  margin-top: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.form {
+  padding: 40px;
+  border: 4px solid purple;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.form__form-field {
+  min-width: 48%;
+  margin-right: 1%;
+}
+
+.form__form-label span {
+  text-decoration: line-through;
+}
+
+.form__form-label-star {
+  font-size: 20px;
+  color: red;
+  text-decoration: none;
+}
+
+.info-shower {
+  border: 4px solid purple;
+}
+
+.info-shower__header {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+}

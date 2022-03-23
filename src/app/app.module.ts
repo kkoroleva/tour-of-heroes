@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -31,6 +31,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatChipsModule, } from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
+
 import { FenceCasePipe } from './fence-case.pipe';
 
 
@@ -47,6 +50,7 @@ import { RainbowDirective } from './directives/rainbow.directive';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BookModule,
     HttpClientModule,
@@ -63,8 +67,8 @@ import { RainbowDirective } from './directives/rainbow.directive';
     MatListModule,
     MatMenuModule,
     MatTabsModule,
-
-    //Modules
+    MatChipsModule,
+    MatIconModule,
   ],
   declarations: [
     AppComponent,

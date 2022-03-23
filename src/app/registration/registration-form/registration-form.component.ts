@@ -13,7 +13,6 @@ export class RegistrationFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   loginFormControl = new FormControl('', [Validators.required, Validators.email]);
   passwordFormControl = new FormControl('', [Validators.required, Validators.email]);
 
