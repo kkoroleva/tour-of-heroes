@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, HostBinding } from '@angular/core';
+import { Directive, ElementRef, HostListener, HostBinding, Renderer2 } from '@angular/core';
 
 
 /*- Сделать директиву, которая делает следующее с текстом при навешивании директивы
@@ -10,7 +10,7 @@ https://codemyui.com/rainbow-text-animation/ */
 export class RainbowDirective {
 
 
-  constructor(private element: ElementRef) {
+  constructor(private element: ElementRef, private renderer: Renderer2) {
   }
 
   textD = '';
@@ -30,6 +30,5 @@ export class RainbowDirective {
   @HostListener('mouseleave') OnLeave() {
     this.element.nativeElement.classList.remove('anim-text-flow');
     this.element.nativeElement.innerHTML = this.textD;
-    console.log(this.textD);
   }
 }
