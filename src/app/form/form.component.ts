@@ -19,7 +19,7 @@ export class FormComponent implements OnInit {
   };
 
   basicSuperpowers: string[] = ['жизнерадостность', 'интеллект', 'заинтересованность'];
-  superpowers: string[] = ['жизнерадостность', 'интеллект', 'заинтересованность'];
+  readonly superpowers = this.basicSuperpowers;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   addOnBlur = true;
 
@@ -30,11 +30,11 @@ export class FormComponent implements OnInit {
       lastNameControl: new FormControl('', [Validators.required, Validators.pattern(/[А-яё]/)]),
       fatherNameControl: new FormControl('', [Validators.pattern(/[А-яё]/)]),
       emailControl: new FormControl('', [Validators.email]),
-      powersControl: this.builder.array([new FormControl(this.superpowers)]),
+      powersControl: this.builder.array(this.superpowers),
     });
   }
 
-  isInvalid(control: string){
+  isInvalid(control: string): boolean {
     return this.formGroup.controls[control].invalid && this.formGroup.controls[control].touched;
   }
 
@@ -50,15 +50,17 @@ export class FormComponent implements OnInit {
   }
 
   addPower(event: MatChipInputEvent): void {
-    if (!this.superpowers.includes(event.value) && event.value) {
-      this.superpowers.push(event.value);
+    if (!this.powers.value.has(event.value) && event.value) {
+     this.powers.push(new FormControl(event.value));
     }
     event.chipInput!.clear();
   }
 
   removePower(power: string): void {
-    if (this.superpowers.includes(power)) {
-      this.superpowers.splice(this.superpowers.indexOf(power), 1);
+    for (let i = 0; i < this.powers.length; i++) {
+      if (this.powers.at(i).value === power) {
+        this.powers.removeAt(i);
+      }
     }
   }
 
@@ -69,8 +71,6 @@ export class FormComponent implements OnInit {
   clearForm(): void {
     this.formGroup.reset();
     this.powers.clear();
-    this.superpowers = [];
-    this.superpowers = this.basicSuperpowers;
 
     this.superpowers.forEach(el => {
       this.powers.push(this.builder.control(el));

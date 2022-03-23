@@ -28,7 +28,7 @@
     <mat-form-field class="form__form-field" appearance="fill">
       <mat-label class="form__form-label" aria-label="Список навыков"><span>Суперсилы</span> Навыки</mat-label>
       <mat-chip-list class="form__form-chips" #powerList formArrayName="powersControl">
-        <mat-chip *ngFor="let power of superpowers" (removed)="removePower(power)">
+        <mat-chip *ngFor="let power of powers.value; let idx = index" (removed)="removePower(power)">
           {{power}}
           <button matChipRemove>
             <mat-icon>cancel</mat-icon>
