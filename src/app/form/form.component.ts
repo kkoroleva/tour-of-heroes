@@ -18,8 +18,7 @@ export class FormComponent implements OnInit {
     lastName: '',
   };
 
-  basicSuperpowers: string[] = ['жизнерадостность', 'интеллект', 'заинтересованность'];
-  readonly superpowers = this.basicSuperpowers;
+  readonly superpowers: string[] = ['жизнерадостность', 'интеллект', 'заинтересованность'];
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   addOnBlur = true;
 
@@ -50,18 +49,14 @@ export class FormComponent implements OnInit {
   }
 
   addPower(event: MatChipInputEvent): void {
-    if (!this.powers.value.has(event.value) && event.value) {
+    if (!this.powers.value.includes(event.value) && event.value) {
      this.powers.push(new FormControl(event.value));
     }
     event.chipInput!.clear();
   }
 
-  removePower(power: string): void {
-    for (let i = 0; i < this.powers.length; i++) {
-      if (this.powers.at(i).value === power) {
-        this.powers.removeAt(i);
-      }
-    }
+  removePower(idx: number): void {
+    this.powers.removeAt(idx);
   }
 
   get powers() {
