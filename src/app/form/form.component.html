@@ -40,7 +40,7 @@
       </mat-chip-list>
     </mat-form-field>
     <button type="submit" mat-raised-button class="form__button" [disabled]="!formGroup.valid">Показать</button>
-    <button mat-raised-button class="form__button" (click)="clearForm()">Очистить</button>
+    <a mat-raised-button class="form__button" (click)="$event.preventDefault(); clearForm()">Очистить</a>
   </form>
   <div class="form-section__info-shower info-shower">
     <h3 class="info-shower__header">Here is your filled data</h3>

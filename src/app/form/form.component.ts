@@ -3,6 +3,7 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { User } from './user';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
+import {CyrilicCheckValidator} from '../CyrrilicCheck.validator';
 
 @Component({
   selector: 'app-form',
@@ -25,12 +26,14 @@ export class FormComponent implements OnInit {
   constructor(private builder: FormBuilder) {
 
     this.formGroup = this.builder.group({
-      firstNameControl: new FormControl('', [Validators.required, Validators.pattern(/[А-яё]/)]),
-      lastNameControl: new FormControl('', [Validators.required, Validators.pattern(/[А-яё]/)]),
-      fatherNameControl: new FormControl('', [Validators.pattern(/[А-яё]/)]),
+      firstNameControl: new FormControl('', [Validators.required]),
+      lastNameControl: new FormControl('', [Validators.required, Validators.pattern(/[А-яЁё]/)]),
+      fatherNameControl: new FormControl('', [Validators.pattern(/[А-яЁё]/)]),
       emailControl: new FormControl('', [Validators.email]),
       powersControl: this.builder.array(this.superpowers),
     });
+
+    console.log(CyrilicCheckValidator.validate(this.formGroup.controls['firstNameControl']));
   }
 
   isInvalid(control: string): boolean {

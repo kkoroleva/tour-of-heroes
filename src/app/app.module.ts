@@ -43,6 +43,8 @@ import { TextModificatorDirective } from './directives/text-modificator.directiv
 import { TextModificatorHostDirective } from './directives/text-modificator-host.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
 
+import { CyrilicCheckValidator } from './CyrrilicCheck.validator';
+
 
 @NgModule({
   imports: [
@@ -84,6 +86,7 @@ import { RainbowDirective } from './directives/rainbow.directive';
     TextModificatorHostDirective,
     RainbowDirective,
     FormComponent,
+    CyrilicCheckValidator,
   ],
   bootstrap: [ AppComponent ]
 })
