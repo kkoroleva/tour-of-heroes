@@ -3,7 +3,7 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { User } from './user';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
-import {CyrilicCheckValidator} from '../CyrrilicCheck.validator';
+import {CyrilicCheckValidator} from '../validators/CyrrilicCheck.validator';
 
 @Component({
   selector: 'app-form',
