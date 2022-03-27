@@ -24,8 +24,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { BookChartComponent } from './book-chart/book-chart.component';
-
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -52,7 +51,7 @@ import { BookChartComponent } from './book-chart/book-chart.component';
     MatCardModule,
     MatTableModule,
     MatExpansionModule,
-
+    MatDialogModule,
   ],
   exports: [
     BookComponent,

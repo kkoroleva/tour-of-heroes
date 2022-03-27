@@ -6,7 +6,7 @@
 
     <a mat-raised-button color="primary" routerLink="pages" class = "book__books-table">Random Book</a>
 
-    <a mat-raised-button color="primary" routerLink="chart" class = "book__books-table">Book chart</a>
+    <a mat-raised-button color="primary" class = "book__books-table" (click)="openBookChart($event)">Book chart</a>
   </header>
   <hr>
   <router-outlet></router-outlet>

@@ -33,7 +33,6 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatChipsModule, } from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule} from '@angular/material/dialog';
 
 import { FenceCasePipe } from './fence-case.pipe';
 
@@ -72,7 +71,6 @@ import { CyrilicCheckValidator } from './CyrrilicCheck.validator';
     MatTabsModule,
     MatChipsModule,
     MatIconModule,
-    MatDialogModule,
   ],
   declarations: [
     AppComponent,

@@ -1,9 +1,11 @@
-<div class="book-chart__wrapper">
-  <h3 class="book-chart__header"> Here is your chart.Enjoy </h3>
+<mat-dialog-content class="book-chart__wrapper">
+  <h3 mat-dialog-title class="book-chart__header"> Here is your chart.Enjoy </h3>
   <a #RandomButton mat-raised-button color="primary" href="" class="book-chart__random-button" (click)="rndButtonClickHandler($event)">Random Line Bar</a>
   <canvas #bookChart width="600" height="400" aria-label="Book chart" role="img">
     <p class="book-chart__accsesible-text"> Error: Sorry.Chart was not downloaded.But here shall be book - chart soon.
     </p>
   </canvas>
-
-</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="primary" mat-dialog-close >Close</button>
+</mat-dialog-actions>

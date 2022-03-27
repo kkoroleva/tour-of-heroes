@@ -29,7 +29,7 @@ export const routesChildren: Routes = [
         ],
       },
       { path: 'table', component: BookTableComponent },
-      { path: 'chart', component: BookChartComponent },
+      { path: 'chart', component: BookChartComponent }, //этот путь я оставляю для прямого доступа к графику через url.
     ]
   }];
 
