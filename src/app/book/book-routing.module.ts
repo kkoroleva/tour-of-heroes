@@ -8,6 +8,7 @@ import { Page4Component } from './page4/page4.component';
 import { Page5Component } from './page5/page5.component';
 
 import { BookTableComponent } from './book-table/book-table.component';
+import { BookChartComponent } from './book-chart/book-chart.component';
 
 
 export const routesChildren: Routes = [
@@ -28,6 +29,7 @@ export const routesChildren: Routes = [
         ],
       },
       { path: 'table', component: BookTableComponent },
+      { path: 'chart', component: BookChartComponent },
     ]
   }];
 

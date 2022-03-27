@@ -33,7 +33,6 @@ export class FormComponent implements OnInit {
       powersControl: this.builder.array(this.superpowers),
     });
 
-    console.log(CyrilicCheckValidator.validate(this.formGroup.controls['firstNameControl']));
   }
 
   isInvalid(control: string): boolean {
