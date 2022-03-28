@@ -9,7 +9,7 @@ import { Directive } from "@angular/core";
 })
 export class CyrilicCheckValidator implements Validator {
   validate(control: AbstractControl): ValidationErrors | null {
-    if (!control.value.match(/[А-яЁё]/)) {
+    if (!control.value.match('/[А-яЁё]/g')) {
       return {
         validate: {
           valid: false

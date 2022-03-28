@@ -27,7 +27,7 @@ export class FormComponent implements OnInit {
     this.formGroup = this.builder.group({
       firstNameControl: ['', [Validators.required, this.CCheck]],
       lastNameControl: ['', [Validators.required]],
-      fatherNameControl: ['', [Validators.pattern(/[А-яЁё]/)]],
+      fatherNameControl: ['', [Validators.pattern('/[А-яЁё]/g')]],
       emailControl: ['', [Validators.email]],
       powersControl: this.builder.array(this.superpowers),
     });
@@ -35,7 +35,7 @@ export class FormComponent implements OnInit {
   }
 
   CCheck(control: FormControl): Object | null {
-    let regExp = /[А-яЁё]/;
+    let regExp = new RegExp('/[А-яЁё]/g');
     return regExp.test(control.value) ? null : {
       validate: {
         valid: false
