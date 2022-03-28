@@ -43,7 +43,10 @@ import { TextModificatorDirective } from './directives/text-modificator.directiv
 import { TextModificatorHostDirective } from './directives/text-modificator-host.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
 
+/**Other */
 import { CyrilicCheckValidator } from './validators/CyrrilicCheck.validator';
+import { TokenInterceptor } from './token-check.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 @NgModule({
@@ -88,6 +91,13 @@ import { CyrilicCheckValidator } from './validators/CyrrilicCheck.validator';
     FormComponent,
     [FormComponent, CyrilicCheckValidator],
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+  ]
 })
 export class AppModule { }
