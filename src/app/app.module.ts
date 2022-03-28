@@ -86,7 +86,7 @@ import { CyrilicCheckValidator } from './validators/CyrrilicCheck.validator';
     TextModificatorHostDirective,
     RainbowDirective,
     FormComponent,
-    CyrilicCheckValidator,
+    [FormComponent, CyrilicCheckValidator],
   ],
   bootstrap: [ AppComponent ]
 })

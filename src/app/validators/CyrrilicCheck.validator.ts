@@ -4,16 +4,18 @@ import { Directive } from "@angular/core";
 
 
 @Directive({
-  selector: '[CyrilicCheckValidator]',
-  providers: [{provide: NG_VALIDATORS, useExisting: CyrilicCheckValidator, multi: true}]
+  selector: '[CyrilicCheckValidator][ngModel]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: CyrilicCheckValidator, multi: true }]
 })
 export class CyrilicCheckValidator implements Validator {
-  validate(control: AbstractControl): ValidationErrors|null {
+  validate(control: AbstractControl): ValidationErrors | null {
     if (!control.value.match(/[А-яЁё]/)) {
-      console.log('Oooops!');
-      return {'error': true}
+      return {
+        validate: {
+          valid: false
+        }
+      }
     }
-
     return null;
   }
 }
