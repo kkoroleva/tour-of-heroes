@@ -1,5 +1,5 @@
 <section class="form-section">
-  <form class="form-section__form form" action="post" [formGroup]="formGroup" (submit)="onSubmit()">
+  <form class="form-section__form form" action="post" [formGroup]="formGroup" (submit)="onSubmit()" novalidate>
     <h2 class="form__header">Тренировка по созданию форм, валидаторов</h2>
     <mat-form-field class="form__form-field" appearance="fill">
       <mat-label class="form__form-label">Имя</mat-label>
@@ -9,21 +9,22 @@
     </mat-form-field>
     <mat-form-field class="form__form-field" appearance="fill">
       <mat-label class="form__form-label">Фамилия</mat-label>
-      <input matInput placeholder="Бэтменов" id="user-last-name" #userLastName formControlName="lastNameControl">
-      <mat-error *ngIf="isInvalid('lastNameControl')">Обязательное поле: Фамилия должна быть написано кириллицей и
+      <input ngModel CyrilicCheckValidator matInput placeholder="Бэтменов" id="user-last-name" #userLastName formControlName="lastNameControl">
+      <mat-error>Обязательное поле: Фамилия должна быть написано кириллицей и
         содержать только буквы</mat-error>
     </mat-form-field>
     <mat-form-field class="form__form-field" appearance="fill">
       <mat-label class="form__form-label">Отчество</mat-label>
       <input matInput placeholder="Брюсович" id="user-father-name" #userFatherName formControlName="fatherNameControl">
+      <mat-error *ngIf="isInvalid('fatherNameControl')">Отчество должно быть написано кириллицей и
+        содержать только буквы</mat-error>
     </mat-form-field>
-    <mat-error *ngIf="isInvalid('fatherNameControl')">Отчество должно быть написано кириллицей и
-      содержать только буквы</mat-error>
     <mat-form-field class="form__form-field" appearance="fill">
       <mat-label class="form__form-label">E-mail</mat-label>
       <input matInput placeholder="frontqueen@wildberries.ru" id="user-email" #userEmail type="email"
         formControlName="emailControl">
-      <mat-error *ngIf="isInvalid('emailControl')">Поле должно быть заполнено в формате prename@domain.postfix</mat-error>
+      <mat-error *ngIf="isInvalid('emailControl')">Поле должно быть заполнено в формате prename@domain.postfix
+      </mat-error>
     </mat-form-field>
     <mat-form-field class="form__form-field" appearance="fill">
       <mat-label class="form__form-label" aria-label="Список навыков"><span>Суперсилы</span> Навыки</mat-label>
@@ -40,7 +41,7 @@
       </mat-chip-list>
     </mat-form-field>
     <button type="submit" mat-raised-button class="form__button" [disabled]="!formGroup.valid">Показать</button>
-    <button mat-raised-button class="form__button" (click)="clearForm()">Очистить</button>
+    <a mat-raised-button class="form__button" (click)="$event.preventDefault(); clearForm()">Очистить</a>
   </form>
   <div class="form-section__info-shower info-shower">
     <h3 class="info-shower__header">Here is your filled data</h3>

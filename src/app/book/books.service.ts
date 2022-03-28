@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, forkJoin } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Set1, Set2 } from "./book";
+import { Set1, Set2, Book } from "./book";
 
 
 @Injectable({

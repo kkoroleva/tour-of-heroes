@@ -23,6 +23,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { BookChartComponent } from './book-chart/book-chart.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     Page5Component,
     BookTableComponent,
     BookPaginationComponent,
+    BookChartComponent,
   ],
   imports: [
     CommonModule,
@@ -48,7 +51,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCardModule,
     MatTableModule,
     MatExpansionModule,
-
+    MatDialogModule,
   ],
   exports: [
     BookComponent,

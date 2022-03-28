@@ -73,7 +73,7 @@ export class InMemoryDataService implements InMemoryDbService {
         }, {
           id: 5,
           releaseDate: "2011-06-22",
-          qtyRelease: 90000
+          qtyRelease: 9000
         }, {
           id: 6,
           releaseDate: "2011-03-22",

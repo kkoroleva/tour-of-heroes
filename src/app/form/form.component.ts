@@ -3,13 +3,13 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { User } from './user';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
+import { CyrilicCheckValidator } from '../validators/CyrrilicCheck.validator';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-
 export class FormComponent implements OnInit {
 
   formGroup: FormGroup;
@@ -25,12 +25,22 @@ export class FormComponent implements OnInit {
   constructor(private builder: FormBuilder) {
 
     this.formGroup = this.builder.group({
-      firstNameControl: new FormControl('', [Validators.required, Validators.pattern(/[А-яё]/)]),
-      lastNameControl: new FormControl('', [Validators.required, Validators.pattern(/[А-яё]/)]),
-      fatherNameControl: new FormControl('', [Validators.pattern(/[А-яё]/)]),
-      emailControl: new FormControl('', [Validators.email]),
+      firstNameControl: ['', [Validators.required, this.CCheck]],
+      lastNameControl: ['', [Validators.required]],
+      fatherNameControl: ['', [Validators.pattern('/[А-яЁё]/g')]],
+      emailControl: ['', [Validators.email]],
       powersControl: this.builder.array(this.superpowers),
     });
+
+  }
+
+  CCheck(control: FormControl): Object | null {
+    let regExp = new RegExp('/[А-яЁё]/g');
+    return regExp.test(control.value) ? null : {
+      validate: {
+        valid: false
+      }
+    };
   }
 
   isInvalid(control: string): boolean {
@@ -50,7 +60,7 @@ export class FormComponent implements OnInit {
 
   addPower(event: MatChipInputEvent): void {
     if (!this.powers.value.includes(event.value) && event.value) {
-     this.powers.push(new FormControl(event.value));
+      this.powers.push(new FormControl(event.value));
     }
     event.chipInput!.clear();
   }
@@ -73,3 +83,4 @@ export class FormComponent implements OnInit {
   }
 
 }
+
