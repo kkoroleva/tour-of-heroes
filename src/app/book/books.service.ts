@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { map, forkJoin } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Set1, Set2, Book } from "./book";
 
 
@@ -15,9 +15,15 @@ export class BooksService {
   }
 
   getSet1() {
-    return this.http.get<Array<Set1>>(this.booksUrl).pipe(map((data: any) => { return data.set1.data }));
+    const temp = this.http.get<Array<Set1>>(this.booksUrl, {headers: {'Session': 'Set1Header'}});
+    return temp.pipe(map((data: any) => {
+      console.log(this.http.get<Array<Set1>>(this.booksUrl));
+      return data.set1.data }));
   }
   getSet2() {
-    return this.http.get<Array<Set2>>(this.booksUrl).pipe(map((data: any) => { return data.set2.data }));
+    const temp = this.http.get<Array<Set2>>(this.booksUrl, {headers: {'Session': 'Set2Header'}});
+    return temp.pipe(map((data: any) => {
+      console.log(this.http.get<Array<Set2>>(this.booksUrl));
+      return data.set2.data }));
   }
 }
