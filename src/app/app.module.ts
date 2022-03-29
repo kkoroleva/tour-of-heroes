@@ -59,9 +59,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     AppRoutingModule,
     BookModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
+    /*HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    ),
+    ),*/
 
     //Material UI
     BrowserAnimationsModule,
