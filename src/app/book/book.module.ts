@@ -41,10 +41,10 @@ import {MatDialogModule} from '@angular/material/dialog';
   imports: [
     CommonModule,
     HttpClientModule,
-    // Remove it when a real server is ready to receive requests.
+    /* Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    ),
+    ),*/
     BookRoutingModule,
     MatPaginatorModule,
     MatButtonModule,

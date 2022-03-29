@@ -1,0 +1,11 @@
+{
+  "/api/*": {
+      "target": "http://localhost:4700",
+      "Authorization": "Bearer your_token",
+      "changeOrigin": true,
+      "secure": false,
+      "pathRewrite": {
+          "^/api": ""
+      }
+  }
+}

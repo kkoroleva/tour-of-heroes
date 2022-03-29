@@ -52,11 +52,11 @@
     }, {
       "id": 5,
       "releaseDate": "2011-06-22",
-      "qtyRelease": 90000
+      "qtyRelease": 9
     }, {
       "id": 6,
       "releaseDate": "2011-03-22",
-      "qtyRelease": 3805
+      "qtyRelease": 38
     }]
   }
 }
