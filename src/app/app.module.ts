@@ -19,6 +19,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { CongratsComponent } from './congrats/congrats.component';
 import { FormComponent } from './form/form.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
+import { MenuComponent } from './menu/menu.component';
 
 //Modules
 import { RegistrationModule } from './registration/registration.module';
@@ -51,12 +52,13 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // Firebase services + environment module
 import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { environment } from '../environments/environment';
-import { MenuComponent } from './menu/menu.component';
+import { AuthorisationService } from './authorization/authorization.service';
 
 
 @NgModule({
@@ -85,7 +87,7 @@ import { MenuComponent } from './menu/menu.component';
     MatChipsModule,
     MatIconModule,
 
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, 'test-bfbc3'),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
@@ -111,6 +113,7 @@ import { MenuComponent } from './menu/menu.component';
   ],
   bootstrap: [ AppComponent ],
   providers: [
+    AuthorisationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

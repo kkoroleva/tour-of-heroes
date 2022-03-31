@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
+import { PassThrough } from 'stream';
 import { AuthorisationService } from './authorization.service';
 
 @Component({
@@ -25,6 +26,14 @@ export class AuthorizationComponent {
   onSubmit() {
     const log = this.formGroup.controls['login'].value;
     const pass = this.formGroup.controls['password'].value;
-    console.log(this.auth.reqAccess(log, pass));
+    console.log(pass);
+    this.auth.authWithLoginAndPassword(log, pass).subscribe(response => {
+      const token = response.json().idToken;
+      console.log(token);
+    });
+
+    //this.formGroup.reset();
   }
+
+
 }
