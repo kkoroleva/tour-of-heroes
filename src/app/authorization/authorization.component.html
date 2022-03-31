@@ -1,0 +1,19 @@
+<div class="authorization">
+  <form class="authorization__form" [formGroup]="formGroup" (submit)="onSubmit()">
+    <mat-form-field class="authorization__form-field" appearance="fill">
+      <mat-label>Username: </mat-label>
+      <input  matInput placeholder="shambhavim1999" id="user-name" #userName
+      formControlName="password">
+      <mat-error *ngIf="isInvalid('login')">Required (at least 5 characters) </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="authorization__form-field" appearance="fill">
+      <mat-label>Password:</mat-label>
+      <input type="password" matInput placeholder="********" id="user-password" #userPassword
+      formControlName="password">
+      <mat-error *ngIf="isInvalid('password')">Required (at least 5 characters)</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" class="authorization__submit">Войти</button>
+  </form>
+</div>
