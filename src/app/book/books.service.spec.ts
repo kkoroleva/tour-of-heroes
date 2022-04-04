@@ -27,40 +27,6 @@ describe('Books Service', () => {
     expect(booksService).toBeTruthy();
   });
 
-  it('can get set2', () => {
-    const data2: Set2[] = [
-      {
-        "id": 1,
-        "releaseDate": "2011-01-02",
-        "qtyRelease": 500
-      }, {
-        "id": 2,
-        "releaseDate": "2011-01-03",
-        "qtyRelease": 7500
-      }, {
-        "id": 3,
-        "releaseDate": "2011-06-03",
-        "qtyRelease": 9700
-      }, {
-        "id": 4,
-        "releaseDate": "2011-07-22",
-        "qtyRelease": 380
-      }, {
-        "id": 5,
-        "releaseDate": "2011-06-22",
-        "qtyRelease": 90000
-      }, {
-        "id": 6,
-        "releaseDate": "2011-03-22",
-        "qtyRelease": 3805
-      }];
-
-    booksService.getSet1().subscribe((response) => expect(response).toEqual(data2));
-    const req = httpTestingController.expectOne('api/books');
-    expect(req.request.method).toBe('GET');
-    req.flush(data2);
-  });
-
   it('can get set1', () => {
     const data1: Set1[] = [{
       title: "Harry Potter and the Order of the Phoenix",
@@ -97,8 +63,45 @@ describe('Books Service', () => {
     booksService.getSet1().subscribe((response) => expect(response).toEqual(data1));
     const req = httpTestingController.expectOne('api/books');
     expect(req.request.method).toBe('GET');
+    expect(req.request.headers.get('Session')).toBe('Set1Header');
     req.flush(data1);
   });
+
+  it('can get set2', () => {
+    const books2: Set2[] = [
+      {
+        "id": 1,
+        "releaseDate": "2011-01-02",
+        "qtyRelease": 500
+      }, {
+        "id": 2,
+        "releaseDate": "2011-01-03",
+        "qtyRelease": 7500
+      }, {
+        "id": 3,
+        "releaseDate": "2011-06-03",
+        "qtyRelease": 9700
+      }, {
+        "id": 4,
+        "releaseDate": "2011-07-22",
+        "qtyRelease": 380
+      }, {
+        "id": 5,
+        "releaseDate": "2011-06-22",
+        "qtyRelease": 90000
+      }, {
+        "id": 6,
+        "releaseDate": "2011-03-22",
+        "qtyRelease": 3805
+      }];
+
+    booksService.getSet2().subscribe((response) => expect(response).toEqual(books2));
+    const req = httpTestingController.expectOne('api/books');
+    expect(req.request.method).toBe('GET');
+    expect(req.request.headers.get('Session')).toBe('Set2Header');
+    req.flush(books2);
+  });
+
 
   afterEach(() => httpTestingController.verify())
 
