@@ -29,9 +29,6 @@ const routes: Routes = [
       },
     ]
   },
-  //{ path: 'dashboard', component: DashboardComponent },
-  // { path: 'book', loadChildren: () => import('./book/book-routing.module').then(m => m.BookRoutingModule) },
-
 ];
 
 @NgModule({

@@ -26,9 +26,7 @@ export class BookTableComponent implements OnInit {
   set1: Set1[] = [];
   set2: Set2[] = [];
 
-  constructor(private booksService: BooksService) {
-
-  }
+  constructor(private booksService: BooksService) { }
 
   getSet1(): Subscription {
     return this.booksService.getSet1().subscribe((booksData) => {
@@ -57,13 +55,8 @@ export class BookTableComponent implements OnInit {
     });
   }
 
-
   ngOnInit(): void {
     this.getBooksData();
-  }
-
-  ngOnDestroy(): void {
-
   }
 
   getColumnNameStraight(str: string): string {
