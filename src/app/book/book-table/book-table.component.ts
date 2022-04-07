@@ -39,7 +39,7 @@ export class BookTableComponent implements OnInit {
     });
   }
   getBooksData() {
-    return forkJoin<[Set1[], Set2[]]>([this.booksService.getSet2(), this.booksService.getSet1()]).subscribe(value => {
+    return forkJoin<[Set1[], Set2[]]>([this.booksService.getSet1(), this.booksService.getSet2()]).subscribe(value => {
       this.set1 = value[0];
       this.set2 = value[1];
 

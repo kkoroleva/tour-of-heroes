@@ -37,7 +37,7 @@ export class BookChartComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void { }
 
   getBooksData(): Observable<[Set1[], Set2[]]> {
-    return forkJoin<[Set1[], Set2[]]>([this.booksService.getSet2(), this.booksService.getSet1()]);
+    return forkJoin<[Set1[], Set2[]]>([this.booksService.getSet1(), this.booksService.getSet2()]);
   }
 
   mergeData(value: [Set1[], Set2[]]): Array<Book> {

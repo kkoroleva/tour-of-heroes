@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="5310542012528047166" datatype="html">
+        <source>Tour of Heroes</source>
+        <target>Путь героев</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description"> Epic header</note>
+        <note priority="1" from="meaning">main header</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
