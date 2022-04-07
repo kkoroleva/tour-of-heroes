@@ -26,9 +26,7 @@ export class BookTableComponent implements OnInit {
   set1: Set1[] = [];
   set2: Set2[] = [];
 
-  constructor(private booksService: BooksService) {
-
-  }
+  constructor(private booksService: BooksService) { }
 
   getSet1(): Subscription {
     return this.booksService.getSet1().subscribe((booksData) => {
@@ -41,7 +39,7 @@ export class BookTableComponent implements OnInit {
     });
   }
   getBooksData() {
-    return forkJoin<[Set1[], Set2[]]>([this.booksService.getSet2(), this.booksService.getSet1()]).subscribe(value => {
+    return forkJoin<[Set1[], Set2[]]>([this.booksService.getSet1(), this.booksService.getSet2()]).subscribe(value => {
       this.set1 = value[0];
       this.set2 = value[1];
 
@@ -57,13 +55,8 @@ export class BookTableComponent implements OnInit {
     });
   }
 
-
   ngOnInit(): void {
     this.getBooksData();
-  }
-
-  ngOnDestroy(): void {
-
   }
 
   getColumnNameStraight(str: string): string {

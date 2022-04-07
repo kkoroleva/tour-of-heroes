@@ -18,6 +18,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
 import { CongratsComponent } from './congrats/congrats.component';
 import { FormComponent } from './form/form.component';
+import { AuthorizationComponent } from './authorization/authorization.component';
+import { MenuComponent } from './menu/menu.component';
 
 //Modules
 import { RegistrationModule } from './registration/registration.module';
@@ -48,6 +50,16 @@ import { CyrilicCheckValidator } from './validators/CyrrilicCheck.validator';
 import { TokenInterceptor } from './token-check.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+// Firebase services + environment module
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AuthorisationService } from './authorization/authorization.service';
+
 
 @NgModule({
   imports: [
@@ -74,6 +86,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     MatTabsModule,
     MatChipsModule,
     MatIconModule,
+
+    AngularFireModule.initializeApp(environment.firebase, 'test-bfbc3'),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   declarations: [
     AppComponent,
@@ -90,9 +108,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     RainbowDirective,
     FormComponent,
     [FormComponent, CyrilicCheckValidator],
+    AuthorizationComponent,
+    MenuComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [
+    AuthorisationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

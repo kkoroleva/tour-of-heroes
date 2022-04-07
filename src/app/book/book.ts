@@ -14,3 +14,8 @@ export interface Set2 {
 export interface Book extends Set1, Set2 {
 
 }
+
+export interface Whole {
+  set1: {data: Set1[]}
+  set2: {data: Set2[]}
+}

@@ -7,7 +7,7 @@ export class FenceCasePipe implements PipeTransform {
 
   transform(value: string): string {
     let temp: string[] = [];
-    let counter = 0;
+    let counter: number = 0;
     value.trim().split('').forEach(el => {
       if (el!==' ') {
         counter%2===0? temp.push(el.toUpperCase()) : temp.push(el.toLowerCase());

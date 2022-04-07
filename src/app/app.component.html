@@ -1,15 +1,8 @@
 <div class="body-wrapper">
-  <h1 appRainbow>Tour of Heroes</h1>
-
-  <nav>
-    <a routerLink="/heroes">Heroes</a>
-    <a routerLink="/dashboard">Ranking</a>
-    <a routerLink="/registration">Registration</a>
-    <a routerLink="/book">Book</a>
-    <a routerLink="/form">Form</a>
-  </nav>
-
+  <h1 i18n="main header| Epic header">Tour of Heroes</h1>
+  <ul>
+    <li><a href="/en-US">en</a></li>
+    <li><a href="/ru">ru</a></li>
+  </ul>
   <router-outlet></router-outlet>
-  <app-messages></app-messages>
-
 </div>
